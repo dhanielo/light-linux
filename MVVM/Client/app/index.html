@@ -2,15 +2,38 @@
 <html lang="en" ng-app="lightApp">
 <head>
   	<meta charset="utf-8">
-  	<title>My HTML File</title>
+  	<title>Light Web</title>
   	<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+      <div class="page-header">
+        <h3>Light Linux - bootstrap standalone pages.</h3>
+      </div>
+	   <div class="row" style="margin-bottom:10px;">
+		  <div class="form-group">
+			<div class="col-md-10">
+				<input type="text" class="form-control" name="page" placeholder="Application Name" value=""/>
+			</div>
+			<div class="col-md-2">
+				<input type="button" class="btn btn-success pull-right" name="send" value="Run"/>
+			</div>
+		  </div>
+	  </div>
+	  <div ng-view class="jumbotron"></div>
+    </div>
+    <div class="footer">
+      <div class="container">
+        <p class="text-muted">Copyright © Light Linux - 2014. </p>
+      </div>
+    </div>
+
 	<script src="bower_components/jquery/dist/jquery.min.js"></script>
+	<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
   	<script src="bower_components/angular/angular.min.js"></script>
 	<script src="bower_components/angular-route/angular-route.js"></script>
     <script src="/js/app.js"></script>
   	<script src="/js/controllers.js"></script>
-</head>
-<body>
-	
 </body>
 </html>

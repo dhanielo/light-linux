@@ -1,3 +1,17 @@
-<div ng-view class="view-frame">
-		{{ data.name }}
+<div ng-controller="dashboardController">
+	<h3><small>Task Manager</small></h3>
+	<div ng-if="data.length>0">
+		<table class="table table-striped">
+			<tbody>
+				<tr ng-repeat="proc in data">
+					<td><a href="#" class="glyphicon glyphicon-remove" style="text-decoration:none;"></a></td>
+					<td><a href="#">{{ proc.name }}</a></td>
+					<td><span class="label label-success pull-right">{{ proc.status }}</span></td>
+				</tr>
+			</tbody>
+		</table>
 	</div>
+	<div ng-if="data.length<=0">
+		<h4><small>No Tasks Found.</small></h4>
+	</div>
+</div>

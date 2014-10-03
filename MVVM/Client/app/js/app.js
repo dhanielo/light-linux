@@ -11,8 +11,5 @@ lightApp.config(['$routeProvider',
       when('/dashboard', {
         templateUrl: 'dashboard.html',
         controller: 'dashboardController'
-      }).
-      otherwise({
-        redirectTo: '/'
       });
   }])

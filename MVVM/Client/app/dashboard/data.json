@@ -1,3 +1,8 @@
+[{
+"name": "google.com",
+"status": "Running"
+},
 {
-"name": "angular-seed"
-}
+"name": "github.com",
+"status": "Running"
+}]
