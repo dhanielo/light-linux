@@ -3,8 +3,9 @@
 var lightControllers = angular.module('lightControllers', []);
 
 lightControllers.controller('tasksController', ['$scope', '$http',
-	function ($scope, $http, $location) {
-		$http.get('http://'+$location+'/getTaskMockup').success(function(data) {
+	function ($scope, $http) {
+		//$http.get('http://'+$location+'/getTaskMockup').success(function(data) {
+		$http.get('http://localhost:9090/getTaskMockup').success(function(data) {
 			$scope.data = data;
 		});
 	}]);
