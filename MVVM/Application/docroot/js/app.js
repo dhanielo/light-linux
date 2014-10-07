@@ -8,8 +8,8 @@ var lightApp = angular.module('lightApp', [
 lightApp.config(['$routeProvider',
   function($routeProvider) {
     $routeProvider.
-      when('/dashboard', {
-        templateUrl: 'dashboard.html',
-        controller: 'dashboardController'
+      when('/tasks', {
+        templateUrl: 'tasks.html',
+        controller: 'tasksController'
       });
-  }])
+  }]);
