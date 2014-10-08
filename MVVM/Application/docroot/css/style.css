@@ -8,6 +8,12 @@ body {
   /* Margin bottom by footer height */
   margin-bottom: 60px;
 }
+
+th {
+	color: #999;
+	border: none !important;
+}
+
 .footer {
   position: absolute;
   bottom: 0;
@@ -42,4 +48,15 @@ body {
 	border-color: #ddd;
 	border-width: 1px;
 	border-radius: 4px 4px 
+}
+
+.navbar-header {
+	width:160px;
+	float:left;
+	margin-bottom:5px;
+}
+
+.navbar-header .navbar-item {
+	display:block;
+	width:100%;
 }

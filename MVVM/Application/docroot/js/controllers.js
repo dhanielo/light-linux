@@ -2,10 +2,15 @@
 
 var lightControllers = angular.module('lightControllers', []);
 
-lightControllers.controller('tasksController', ['$scope', '$http',
-	function ($scope, $http) {
-		//$http.get('http://'+$location+'/getTaskMockup').success(function(data) {
-		$http.get('http://localhost:9090/getTaskMockup').success(function(data) {
+lightControllers.controller('tasksController', ['$scope', '$http', '$location',
+	function ($scope, $http, $location) {
+		$http.get('http://'+$location.host()+':'+$location.port()+'/getTasksMockup').success(function(data) {
+			$scope.data = data;
+		});
+	}]);
+lightControllers.controller('appsController', ['$scope', '$http', '$location',
+	function ($scope, $http, $location) {
+		$http.get('http://'+$location.host()+':'+$location.port()+'/getAppsMockup').success(function(data) {
 			$scope.data = data;
 		});
 	}]);

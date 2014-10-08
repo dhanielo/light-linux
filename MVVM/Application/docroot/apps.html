@@ -6,8 +6,8 @@
 		</div>
 		<div class="navbar-collapse collapse">
 			<ul class="nav navbar-nav">
-				<li><a href="#/apps">Apps</a></li>
-				<li class="active"><a href="#/tasks">Tasks</a></li>
+				<li class="active"><a href="#/apps">Apps</a></li>
+				<li><a href="#/tasks">Tasks</a></li>
 			</ul>
 			<ul class="nav navbar-nav navbar-right">
 				<li><a href="../navbar-fixed-top/" style="display:none;">Logout</a></li>
@@ -15,35 +15,17 @@
 		</div>
 	</div>
 </div>
-		
-<div class="row" style="margin-bottom:10px;">
-	<div class="form-group">
-		<div class="col-md-10">
-			<input type="text" class="form-control" name="page" placeholder="Application Name" value=""/>
-		</div>
-		<div class="col-md-2">
-			<input type="button" class="btn btn-success pull-right" name="send" value="Run"/>
-		</div>
-	</div>
-</div>
 
 <div class="jumbotron">
-	<div ng-controller="tasksController">
-		<h3><small>Task Manager</small></h3>
+	<div ng-controller="appsController">
+		<h3><small>Application Manager</small></h3>
 		<div ng-if="data.length>0">
 			<table class="table table-striped">
-				<thead>
-					<tr>
-						<th>Actions</th>
-						<th>Application</th>
-						<th class="pull-right">Status</th>
-					</tr>
-				</thead>
 				<tbody>
-					<tr ng-repeat="proc in data">
+					<tr ng-repeat="app in data">
 						<td><a href="#" class="glyphicon glyphicon-remove" style="text-decoration:none;"></a></td>
-						<td><a href="#">{{ proc.name }}</a></td>
-						<td><span class="label label-success pull-right">{{ proc.status }}</span></td>
+						<td><a href="#">{{ app.name }}</a></td>
+						<td><span class="label label-success pull-right">{{ app.type }}</span></td>
 					</tr>
 				</tbody>
 			</table>

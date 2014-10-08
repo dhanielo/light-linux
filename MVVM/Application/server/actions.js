@@ -1,9 +1,17 @@
-function getTaskMockup_action() {
+function getTasksMockup_action() {
 		
 	var fs  = require('builtin/fs');
-	var content = fs.readFile('server/data/mock_data.json');
+	var content = fs.readFile('server/data/tasks_mock.json');
 	res.write(content);
 	res.stop();	
+}
+
+function getAppsMockup_action() {
+	
+	var fs  = require('builtin/fs');
+	var content = fs.readFile('server/data/apps_mock.json');
+	res.write(content);
+	res.stop();
 }
 
 function notFound_action() {

@@ -11,5 +11,9 @@ lightApp.config(['$routeProvider',
       when('/tasks', {
         templateUrl: 'tasks.html',
         controller: 'tasksController'
-      });
+      }).
+	  when('/apps', {
+		templateUrl: 'apps.html',
+		controller: 'appsController'
+	  });
   }]);

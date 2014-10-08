@@ -1,0 +1,10 @@
+[{
+"name": "google.com",
+"type": "local",
+"source": "teste"
+},
+{
+"name": "github.com",
+"type": "url",
+"source": "teste"
+}]
