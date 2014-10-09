@@ -16,13 +16,46 @@
 	</div>
 </div>
 
+<div class="row" style="margin-bottom:10px;">
+	<form id="form-new-app">
+		<div class="form-group">
+			<div class="col-md-10">
+				<div class="col-md-4">
+					<label for="name">Name</label>
+					<input type="text" class="form-control" name="name" placeholder="Application Name" value=""/>
+				</div>
+				<div class="col-md-3">
+					<label for="source">Source</label>
+					<select class="form-control" name="source">
+						<option ng-repeat="src in sources" value="{{ src.id }}">{{ src.source }}</option>
+					</select>
+				</div>
+				<div class="col-md-5">
+					<label for="path">Path</label>
+					<input type="text" class="form-control" name="path" placeholder="Application Path" value=""/>
+				</div>
+			</div>
+			<div class="col-md-2">
+				<input type="button" class="btn btn-success pull-right" style="margin-top:25px;" name="create-app" value="Add"/>
+			</div>
+		</div>
+	</form>
+</div>
+
 <div class="jumbotron">
 	<div ng-controller="appsController">
 		<h3><small>Application Manager</small></h3>
-		<div ng-if="data.length>0">
+		<div ng-if="apps.length>0">
 			<table class="table table-striped">
+				<thead>
+					<tr>
+						<th>Actions</th>
+						<th>Application</th>
+						<th class="pull-right">Source</th>
+					</tr>
+				</thead>
 				<tbody>
-					<tr ng-repeat="app in data">
+					<tr ng-repeat="app in apps">
 						<td><a href="#" class="glyphicon glyphicon-remove" style="text-decoration:none;"></a></td>
 						<td><a href="#">{{ app.name }}</a></td>
 						<td><span class="label label-success pull-right">{{ app.type }}</span></td>
@@ -30,7 +63,7 @@
 				</tbody>
 			</table>
 		</div>
-		<div ng-if="data.length<=0">
+		<div ng-if="apps.length<=0">
 			<h4><small>No Tasks Found.</small></h4>
 		</div>
 	</div>
