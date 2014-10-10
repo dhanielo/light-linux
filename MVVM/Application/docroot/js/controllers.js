@@ -16,4 +16,19 @@ lightControllers.controller('appsController', ['$scope', '$http', '$location',
 		$http.get('http://'+$location.host()+':'+$location.port()+'/getSources').success(function(data) {
 			$scope.sources = data;
 		});
+		
+		$("#create-app").click(function() {
+			
+			var formData = {
+				name: $("#form-new-app :input[name='name']").val(),
+				source: $("#form-new-app select[name='source'] option:selected").val(),
+				path: $("#form-new-app :input[name='path']").val()
+			};
+			$http.post('http://'+$location.host()+':'+$location.port()+'/addApp', formData)
+			.success(function(e){console.log(e);
+				$location.path("/apps");
+			}).error(function(){
+				//flash.setMessage("Error");
+			});
+		});
 	}]);

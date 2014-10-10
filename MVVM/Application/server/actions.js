@@ -22,6 +22,13 @@ function getSources_action() {
 	res.stop();
 }
 
+function addApp_action() {
+
+	var http = require('builtin/http');
+	var postString = http.readPost(req.data, 500);
+	console.log(postString);
+}
+
 function notFound_action() {
 	res.write('Error 404\n');
 	res.stop();

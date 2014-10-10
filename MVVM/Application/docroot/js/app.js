@@ -18,7 +18,7 @@ lightApp.config(['$routeProvider',
 	  });
   }]);
 
-app.factory("flash", function($rootScope) {
+lightApp.factory("flash", function($rootScope) {
   var queue = [];
   var currentMessage = "";
 
