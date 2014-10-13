@@ -1,4 +1,5 @@
-## Light Linux (on development only web admin interface for now)
+## Light Linux
+-(on development only web admin interface for now)
 This is a Lightweight Linux based on ARM platform. Focused in display web pages without browser and X Server.
 ### Install
 Steps: 
