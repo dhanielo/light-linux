@@ -8,14 +8,26 @@ lightControllers.controller('tasksController', ['$scope', '$http', '$location',
 			$scope.data = data;
 		});
 	}]);
-lightControllers.controller('appsController', ['$scope', '$http', '$location',
-	function ($scope, $http, $location) {
+lightControllers.controller('appsController', ['$scope', '$http', '$location', '$route',
+	function ($scope, $http, $location, $route) {
+		
 		$http.get('http://'+$location.host()+':'+$location.port()+'/getAppsMockup').success(function(data) {
 			$scope.apps = data;
 		});
 		$http.get('http://'+$location.host()+':'+$location.port()+'/getSources').success(function(data) {
 			$scope.sources = data;
 		});
+		
+		$scope.deleteApp = function (name) {
+			var formData = { name: name };
+			$http.post('http://'+$location.host()+':'+$location.port()+'/deleteApp', formData)
+			.success(function() {
+				$route.reload();
+			})
+			.error(function(e){
+				flash.setMessage("Error");
+			});
+		};
 		
 		$("#create-app").click(function() {
 			
@@ -25,10 +37,10 @@ lightControllers.controller('appsController', ['$scope', '$http', '$location',
 				path: $("#form-new-app :input[name='path']").val()
 			};
 			$http.post('http://'+$location.host()+':'+$location.port()+'/addApp', formData)
-			.success(function(e){console.log(e);
-				$location.path("/apps");
+			.success(function(e){
+				$route.reload();
 			}).error(function(){
-				//flash.setMessage("Error");
+				flash.setMessage("Error");
 			});
 		});
 	}]);
