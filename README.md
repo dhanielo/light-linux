@@ -23,7 +23,14 @@ $ http-silk.js bootstrap.js
 ```
 http://localhost:9090/#/apps
 ```
+### BDD Tests
+This project use jasmine (See https://github.com/pivotal/jasmine) for BDD tests.
+Access in your browser:
+```
+http://localhost:9090/tests.html
+```
 ### Requirements
 - Linux
+- npm (Necessary for install bower)
 - bower - See http://bower.io/#install-bower
 - SilkJS - See http://silkjs.net/installing-silkjs/
